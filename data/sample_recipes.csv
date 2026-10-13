@@ -1,0 +1,24 @@
+brand,menu_item,ingredient,quantity_per_item,unit
+Steers,Classic Burger,Beef patty,1,each
+Steers,Classic Burger,Burger bun,1,each
+Steers,Classic Burger,Sauce,20,g
+Steers,Cheese Burger,Beef patty,1,each
+Steers,Cheese Burger,Burger bun,1,each
+Steers,Cheese Burger,Cheese slice,1,each
+Steers,Cheese Burger,Sauce,20,g
+Steers,Chicken Burger,Chicken patty,1,each
+Steers,Chicken Burger,Burger bun,1,each
+Steers,Chicken Burger,Sauce,20,g
+Steers,Chips Portion,Frozen chips,180,g
+Debonairs Pizza,Large Pizza,Pizza dough,1,each
+Debonairs Pizza,Large Pizza,Pizza cheese,180,g
+Debonairs Pizza,Large Pizza,Pizza sauce,90,g
+Debonairs Pizza,Large Pizza,Pizza toppings mix,120,g
+Debonairs Pizza,Medium Pizza,Pizza dough,1,each
+Debonairs Pizza,Medium Pizza,Pizza cheese,130,g
+Debonairs Pizza,Medium Pizza,Pizza sauce,65,g
+Debonairs Pizza,Medium Pizza,Pizza toppings mix,85,g
+Debonairs Pizza,Garlic Bread,Garlic bread base,1,each
+Debonairs Pizza,Garlic Bread,Garlic butter,25,g
+Debonairs Pizza,Dessert Pizza,Dessert dough,1,each
+Debonairs Pizza,Dessert Pizza,Chocolate topping,70,g

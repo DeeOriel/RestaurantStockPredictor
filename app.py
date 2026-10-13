@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -6,21 +7,55 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 
-st.set_page_config(page_title="Restaurant Stock Predictor", page_icon="📦", layout="wide")
-st.title("📦 Restaurant Stock Predictor")
-st.caption("Sample prototype for Steers and Debonairs Pizza | All data and recipes are illustrative, not official.")
+st.set_page_config(
+    page_title="Restaurant Stock Predictor",
+    page_icon="📦",
+    layout="wide"
+)
 
-ROOT = Path(__file__).parent
-sales_path = ROOT / "data" / "sample_sales.csv"
-recipes_path = ROOT / "data" / "sample_recipes.csv"
-inventory_path = ROOT / "data" / "sample_inventory.csv"
+st.title("📦 Restaurant Stock Predictor")
+st.caption(
+    "Sample prototype for Steers and Debonairs Pizza | "
+    "All data and recipes are illustrative, not official."
+)
+
+ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data"
+
 
 @st.cache_data
 def load_data():
-    sales = pd.read_csv(sales_path, parse_dates=["date"])
+    sales_path = DATA_DIR / "sample_sales.csv"
+    recipes_path = DATA_DIR / "sample_recipes.csv"
+    inventory_path = DATA_DIR / "sample_inventory.csv"
+
+    required_files = [
+        sales_path,
+        recipes_path,
+        inventory_path
+    ]
+
+    missing_files = [
+        str(path.relative_to(ROOT))
+        for path in required_files
+        if not path.is_file()
+    ]
+
+    if missing_files:
+        raise FileNotFoundError(
+            "Missing required data files: "
+            + ", ".join(missing_files)
+        )
+
+    sales = pd.read_csv(
+        sales_path,
+        parse_dates=["date"]
+    )
     recipes = pd.read_csv(recipes_path)
     inventory = pd.read_csv(inventory_path)
+
     return sales, recipes, inventory
+
 
 sales, recipes, inventory = load_data()
 
